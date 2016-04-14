@@ -13,6 +13,13 @@ public class NotForm implements Form {
         this.operand = op;
     }
 
+    /**
+     * @return the operand
+     */
+    public Form getOperand() {
+        return operand;
+    }
+
     @Override
     public void accept(FormVisitor visitor) {
         visitor.visit(this);
