@@ -30,7 +30,15 @@ public class PrintFormVisitor implements FormVisitor {
 
     @Override
     public void visit(NotForm form) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        boolean parentheses = !(form.getOperand() instanceof AtomicForm);
+        this.buffer.append('~');
+        if (parentheses) {
+            this.buffer.append('(');
+        }
+        form.accept(this);
+        if (parentheses) {
+            this.buffer.append(')');
+        }
     }
 
     @Override
