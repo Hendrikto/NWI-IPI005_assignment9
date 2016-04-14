@@ -15,4 +15,6 @@ public interface FormVisitor {
 
     void visit(NotForm form);
 
+    void visit(AtomicForm form);
+
 }
