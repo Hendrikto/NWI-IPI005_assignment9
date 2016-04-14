@@ -43,4 +43,9 @@ public class BinaryOperatorForm implements Form {
         visitor.visit(this);
     }
 
+    @Override
+    public int getPriority() {
+        return this.operation.getPriority();
+    }
+
 }

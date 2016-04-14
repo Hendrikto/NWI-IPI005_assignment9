@@ -39,4 +39,9 @@ public class AtomicForm implements Form {
         return this.name;
     }
 
+    @Override
+    public int getPriority() {
+        return -1;
+    }
+
 }
