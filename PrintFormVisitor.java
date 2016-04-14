@@ -35,7 +35,7 @@ public class PrintFormVisitor implements FormVisitor {
 
     @Override
     public void visit(AtomicForm form) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        this.buffer.append(form.getName());
     }
 
 }
