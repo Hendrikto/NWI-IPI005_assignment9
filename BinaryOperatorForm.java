@@ -31,6 +31,13 @@ public class BinaryOperatorForm implements Form {
         return rightOperand;
     }
 
+    /**
+     * @return the operation
+     */
+    public BinaryOperator getOperation() {
+        return operation;
+    }
+
     @Override
     public void accept(FormVisitor visitor) {
         visitor.visit(this);
