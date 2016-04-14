@@ -7,6 +7,8 @@ package assignment9;
  */
 public class PrintFormVisitor implements FormVisitor {
 
+    private final StringBuilder buffer = new StringBuilder();
+
     @Override
     public void visit(BinaryOperatorForm form) {
         throw new UnsupportedOperationException("Not supported yet.");
