@@ -17,6 +17,20 @@ public class BinaryOperatorForm implements Form {
         this.rightOperand = r;
     }
 
+    /**
+     * @return the leftOperand
+     */
+    public Form getLeftOperand() {
+        return leftOperand;
+    }
+
+    /**
+     * @return the rightOperand
+     */
+    public Form getRightOperand() {
+        return rightOperand;
+    }
+
     @Override
     public void accept(FormVisitor visitor) {
         visitor.visit(this);
