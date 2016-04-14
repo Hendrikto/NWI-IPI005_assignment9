@@ -12,4 +12,9 @@ public class TrueForm implements Form {
         visitor.visit(this);
     }
 
+    @Override
+    public int getPriority() {
+        return -1;
+    }
+
 }

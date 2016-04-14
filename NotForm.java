@@ -25,4 +25,9 @@ public class NotForm implements Form {
         visitor.visit(this);
     }
 
+    @Override
+    public int getPriority() {
+        return 0;
+    }
+
 }

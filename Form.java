@@ -7,4 +7,6 @@ package assignment9;
  */
 public interface Form extends Visitable {
 
+    public int getPriority();
+
 }
