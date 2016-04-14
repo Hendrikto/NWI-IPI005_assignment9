@@ -14,4 +14,39 @@ public class Assignment9 {
         // TODO code application logic here
     }
 
+    public static Form generateForm(char select) {
+        switch (select) {
+            case 1:
+                return new BinaryOperatorForm(
+                        BinaryOperator.IMPLICATION,
+                        new BinaryOperatorForm(
+                                BinaryOperator.AND,
+                                new AtomicForm("A"),
+                                new BinaryOperatorForm(
+                                        BinaryOperator.OR,
+                                        new TrueForm(),
+                                        new FalseForm()
+                                )
+                        ),
+                        new NotForm(
+                                new BinaryOperatorForm(
+                                        BinaryOperator.AND,
+                                        new AtomicForm("A"),
+                                        new AtomicForm("B")
+                                )
+                        )
+                );
+            default:
+                return new BinaryOperatorForm(
+                        BinaryOperator.IMPLICATION,
+                        new AtomicForm("A"),
+                        new BinaryOperatorForm(
+                                BinaryOperator.IMPLICATION,
+                                new AtomicForm("B"),
+                                new AtomicForm("C")
+                        )
+                );
+        }
+    }
+
 }
