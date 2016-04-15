@@ -15,8 +15,8 @@ public class PrintFormVisitor implements FormVisitor {
 
     @Override
     public void visit(BinaryOperatorForm form) {
-        boolean parenthesesLeft = form.getPriority() < form.getLeftOperand().getPriority();
-        boolean parenthesesRight = form.getPriority() < form.getRightOperand().getPriority();
+        boolean parenthesesLeft = form.getPriority() <= form.getLeftOperand().getPriority();
+        boolean parenthesesRight = form.getPriority() <= form.getRightOperand().getPriority();
         if (parenthesesLeft) {
             this.buffer.append('(');
         }
@@ -46,7 +46,7 @@ public class PrintFormVisitor implements FormVisitor {
 
     @Override
     public void visit(NotForm form) {
-        boolean parentheses = form.getPriority() < form.getOperand().getPriority();
+        boolean parentheses = form.getPriority() <= form.getOperand().getPriority();
         this.buffer.append('~');
         if (parentheses) {
             this.buffer.append('(');
