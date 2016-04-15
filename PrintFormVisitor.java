@@ -15,7 +15,23 @@ public class PrintFormVisitor implements FormVisitor {
 
     @Override
     public void visit(BinaryOperatorForm form) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        boolean parenthesesLeft = form.getPriority() < form.getLeftOperand().getPriority();
+        boolean parenthesesRight = form.getPriority() < form.getRightOperand().getPriority();
+        if (parenthesesLeft) {
+            this.buffer.append('(');
+        }
+        form.getLeftOperand().accept(this);
+        if (parenthesesLeft) {
+            this.buffer.append(')');
+        }
+        this.buffer.append(form.getOperation());
+        if (parenthesesRight) {
+            this.buffer.append('(');
+        }
+        form.getRightOperand().accept(this);
+        if (parenthesesRight) {
+            this.buffer.append(')');
+        }
     }
 
     @Override
