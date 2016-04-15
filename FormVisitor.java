@@ -17,4 +17,6 @@ public interface FormVisitor {
 
     void visit(AtomicForm form);
 
+    public String getString();
+
 }
