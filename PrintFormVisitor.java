@@ -20,7 +20,7 @@ public class PrintFormVisitor implements FormVisitor {
 
     @Override
     public void visit(TrueForm form) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        this.buffer.append("true");
     }
 
     @Override
