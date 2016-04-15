@@ -51,7 +51,7 @@ public class PrintFormVisitor implements FormVisitor {
         if (parentheses) {
             this.buffer.append('(');
         }
-        form.accept(this);
+        form.getOperand().accept(this);
         if (parentheses) {
             this.buffer.append(')');
         }
