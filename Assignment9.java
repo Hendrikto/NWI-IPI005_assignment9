@@ -11,7 +11,10 @@ public class Assignment9 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Form f = generateForm((char) 1);
+        PrintFormVisitor v = new PrintFormVisitor();
+        f.accept(v);
+        System.out.println(v.getString());
     }
 
     public static Form generateForm(char select) {
