@@ -30,7 +30,7 @@ public class PrintFormVisitor implements FormVisitor {
 
     @Override
     public void visit(NotForm form) {
-        boolean parentheses = !(form.getOperand() instanceof AtomicForm);
+        boolean parentheses = form.getPriority() < form.getOperand().getPriority();
         this.buffer.append('~');
         if (parentheses) {
             this.buffer.append('(');
