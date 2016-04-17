@@ -37,7 +37,7 @@ public class EvalFormVisitor implements FormVisitor<Boolean> {
 
     @Override
     public Boolean visit(AtomicForm form) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return this.environment.get(form.getName());
     }
 
     @Override
