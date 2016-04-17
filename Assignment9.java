@@ -12,7 +12,7 @@ public class Assignment9 {
      */
     public static void main(String[] args) {
         Form f = generateForm((char) 1);
-        PrintFormVisitor v = new PrintFormVisitor();
+        FormVisitor v = new PrintFormVisitor();
         f.accept(v);
         System.out.println(v.getString());
     }
