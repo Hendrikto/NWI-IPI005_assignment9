@@ -43,9 +43,4 @@ public class EvalFormVisitor implements FormVisitor<Boolean> {
         return this.environment.get(form.getName());
     }
 
-    @Override
-    public String getString() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
 }
