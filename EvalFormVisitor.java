@@ -17,7 +17,10 @@ public class EvalFormVisitor implements FormVisitor<Boolean> {
 
     @Override
     public Boolean visit(BinaryOperatorForm form) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return form.getOperation().apply(
+                form.getLeftOperand().accept(this),
+                form.getRightOperand().accept(this)
+        );
     }
 
     @Override
