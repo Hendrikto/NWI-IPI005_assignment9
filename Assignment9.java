@@ -1,5 +1,8 @@
 package assignment9;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  *
  * @author Hendrik Werner // s4549775
@@ -13,8 +16,14 @@ public class Assignment9 {
     public static void main(String[] args) {
         Form f = generateForm((char) 1);
         PrintFormVisitor v = new PrintFormVisitor();
+        Map<String, Boolean> env = new HashMap<>();
+        env.put("A", false);
+        env.put("B", true);
+        env.put("C", false);
+        FormVisitor e = new EvalFormVisitor(env);
         f.accept(v);
         System.out.println(v.getString());
+        System.out.println(f.accept(e));
     }
 
     public static Form generateForm(char select) {
