@@ -32,7 +32,7 @@ public class EvalFormVisitor implements FormVisitor<Boolean> {
 
     @Override
     public Boolean visit(NotForm form) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return !form.accept(this);
     }
 
     @Override
