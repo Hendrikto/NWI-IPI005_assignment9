@@ -17,6 +17,4 @@ public interface FormVisitor<T> {
 
     public T visit(AtomicForm form);
 
-    public String getString();
-
 }
