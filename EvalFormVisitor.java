@@ -35,7 +35,7 @@ public class EvalFormVisitor implements FormVisitor<Boolean> {
 
     @Override
     public Boolean visit(NotForm form) {
-        return !form.accept(this);
+        return !form.getOperand().accept(this);
     }
 
     @Override
