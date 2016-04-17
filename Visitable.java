@@ -7,6 +7,6 @@ package assignment9;
  */
 public interface Visitable {
 
-    public void accept(FormVisitor visitor);
+    public <T> T accept(FormVisitor<T> visitor);
 
 }

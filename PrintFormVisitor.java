@@ -5,7 +5,7 @@ package assignment9;
  * @author Hendrik Werner // s4549775
  * @author Jasper Haasdijk // s4449754
  */
-public class PrintFormVisitor implements FormVisitor {
+public class PrintFormVisitor implements FormVisitor<Void> {
 
     private final StringBuilder buffer = new StringBuilder();
 
@@ -14,7 +14,7 @@ public class PrintFormVisitor implements FormVisitor {
     }
 
     @Override
-    public void visit(BinaryOperatorForm form) {
+    public Void visit(BinaryOperatorForm form) {
         boolean parenthesesLeft = form.getPriority() <= form.getLeftOperand().getPriority();
         boolean parenthesesRight = form.getPriority() <= form.getRightOperand().getPriority();
         if (parenthesesLeft) {
@@ -32,20 +32,23 @@ public class PrintFormVisitor implements FormVisitor {
         if (parenthesesRight) {
             this.buffer.append(')');
         }
+        return null;
     }
 
     @Override
-    public void visit(TrueForm form) {
+    public Void visit(TrueForm form) {
         this.buffer.append("true");
+        return null;
     }
 
     @Override
-    public void visit(FalseForm form) {
+    public Void visit(FalseForm form) {
         this.buffer.append("false");
+        return null;
     }
 
     @Override
-    public void visit(NotForm form) {
+    public Void visit(NotForm form) {
         boolean parentheses = form.getPriority() <= form.getOperand().getPriority();
         this.buffer.append('~');
         if (parentheses) {
@@ -55,11 +58,13 @@ public class PrintFormVisitor implements FormVisitor {
         if (parentheses) {
             this.buffer.append(')');
         }
+        return null;
     }
 
     @Override
-    public void visit(AtomicForm form) {
+    public Void visit(AtomicForm form) {
         this.buffer.append(form.getName());
+        return null;
     }
 
 }

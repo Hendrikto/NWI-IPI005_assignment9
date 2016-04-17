@@ -39,8 +39,8 @@ public class BinaryOperatorForm implements Form {
     }
 
     @Override
-    public void accept(FormVisitor visitor) {
-        visitor.visit(this);
+    public <T> T accept(FormVisitor<T> visitor) {
+        return visitor.visit(this);
     }
 
     @Override
