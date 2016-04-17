@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * Contains the main method.
  *
  * @author Hendrik Werner // s4549775
  * @author Jasper Haasdijk // s4449754
@@ -11,6 +12,8 @@ import java.util.Map;
 public class Assignment9 {
 
     /**
+     * Entry point
+     *
      * @param args the command line arguments
      */
     public static void main(String[] args) {
@@ -26,6 +29,12 @@ public class Assignment9 {
         System.out.printf("Evaluation: %b\n", f.accept(e));
     }
 
+    /**
+     * Generate formulas for testing.
+     *
+     * @param select selects the formula that is generated
+     * @return a formula based on the select argument
+     */
     public static Form generateForm(char select) {
         switch (select) {
             case 1:
