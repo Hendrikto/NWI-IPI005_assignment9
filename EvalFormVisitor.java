@@ -22,7 +22,7 @@ public class EvalFormVisitor implements FormVisitor<Boolean> {
 
     @Override
     public Boolean visit(TrueForm form) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return true;
     }
 
     @Override
