@@ -23,7 +23,7 @@ public class Assignment9 {
         FormVisitor e = new EvalFormVisitor(env);
         f.accept(v);
         System.out.println(v.getString());
-        System.out.println(f.accept(e));
+        System.out.printf("Evaluation: %b\n", f.accept(e));
     }
 
     public static Form generateForm(char select) {
