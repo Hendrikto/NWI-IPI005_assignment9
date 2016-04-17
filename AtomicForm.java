@@ -26,20 +26,6 @@ public class AtomicForm implements Form {
     }
 
     @Override
-    public boolean equals(Object a) {
-        if (this.getClass() == a.getClass()) {
-            return this.name.equals(((AtomicForm) a).getName());
-        } else {
-            return false;
-        }
-    }
-
-    @Override
-    public String toString() {
-        return this.name;
-    }
-
-    @Override
     public int getPriority() {
         return -1;
     }
