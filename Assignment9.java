@@ -17,7 +17,7 @@ public class Assignment9 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Form f = generateForm((char) 1);
+        Form f = generateForm(1);
         PrintFormVisitor v = new PrintFormVisitor();
         Map<String, Boolean> env = new HashMap<>();
         env.put("A", false);
@@ -35,7 +35,7 @@ public class Assignment9 {
      * @param select selects the formula that is generated
      * @return a formula based on the select argument
      */
-    public static Form generateForm(char select) {
+    public static Form generateForm(int select) {
         switch (select) {
             case 1:
                 return new BinaryOperatorForm(
