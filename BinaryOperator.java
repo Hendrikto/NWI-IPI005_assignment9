@@ -33,8 +33,8 @@ public enum BinaryOperator {
      * @param prio the priority of the binary operator
      */
     private BinaryOperator(String op, int prio) {
-        this.operation = op;
-        this.priority = prio;
+        operation = op;
+        priority = prio;
     }
 
     /**
@@ -49,7 +49,7 @@ public enum BinaryOperator {
      */
     @Override
     public String toString() {
-        return this.operation;
+        return operation;
     }
 
     /**
