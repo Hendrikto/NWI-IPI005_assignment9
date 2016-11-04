@@ -20,9 +20,9 @@ public class BinaryOperatorForm implements Form {
      * @param r the second operand
      */
     public BinaryOperatorForm(BinaryOperator op, Form l, Form r) {
-        this.operation = op;
-        this.leftOperand = l;
-        this.rightOperand = r;
+        operation = op;
+        leftOperand = l;
+        rightOperand = r;
     }
 
     /**
@@ -63,7 +63,7 @@ public class BinaryOperatorForm implements Form {
      */
     @Override
     public int getPriority() {
-        return this.operation.getPriority();
+        return operation.getPriority();
     }
 
 }
