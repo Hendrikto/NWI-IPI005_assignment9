@@ -16,7 +16,7 @@ public class NotForm implements Form {
      * @param op the operand
      */
     public NotForm(Form op) {
-        this.operand = op;
+        operand = op;
     }
 
     /**
