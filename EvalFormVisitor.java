@@ -19,7 +19,7 @@ public class EvalFormVisitor implements FormVisitor<Boolean> {
      * @param env a Map op values of the AtomicForms
      */
     public EvalFormVisitor(Map<String, Boolean> env) {
-        this.environment = env;
+        environment = env;
     }
 
     /**
@@ -77,7 +77,7 @@ public class EvalFormVisitor implements FormVisitor<Boolean> {
      */
     @Override
     public Boolean visit(AtomicForm form) {
-        return this.environment.get(form.getName());
+        return environment.get(form.getName());
     }
 
 }
