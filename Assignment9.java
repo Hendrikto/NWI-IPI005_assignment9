@@ -26,7 +26,7 @@ public class Assignment9 {
         FormVisitor e = new EvalFormVisitor(env);
         f.accept(v);
         System.out.println(v.getString());
-        System.out.printf("Evaluation: %b\n", f.accept(e));
+        System.out.printf("Evaluation: %b%n", f.accept(e));
     }
 
     /**
